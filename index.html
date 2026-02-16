@@ -14,113 +14,140 @@
 
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #111827;
+      --bg1: #020617;
+      --bg2: #020b2e;
+      --bg3: #03143d;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.25);
       --text: #e5e7eb;
       --muted: #9ca3af;
-      --accent: #38bdf8;
+      --card: rgba(17,24,39,0.75);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3));
+      background-size: 400% 400%;
+      animation: gradientMove 18s ease infinite;
+      overflow-x: hidden;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* DATA NETWORK BACKGROUND */
+    .data-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
 
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 24px 24px; /* tighter vertical spacing */
     }
 
-    h1, h2, h3 {
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
+    h1, h2, h3 { font-weight: 700; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 1.9rem; margin-bottom: 12px; }
+    h3 { margin-bottom: 8px; }
 
-    h2 { font-size: 2rem; }
+    p { color: var(--muted); max-width: 820px; }
 
-    p { color: var(--muted); max-width: 800px; }
-
-    /* Hero */
+    /* HERO */
     .hero {
-      min-height: 90vh;
+      min-height: 65vh; /* reduced from 80vh */
       display: flex;
       flex-direction: column;
       justify-content: center;
+      gap: 10px;
     }
 
-    .hero h1 { font-size: 3rem; }
-
-    .hero h3 {
+    .hero-role {
       color: var(--accent);
       font-weight: 500;
-      margin-bottom: 20px;
+      letter-spacing: 0.4px;
     }
 
-    .hero-buttons a {
-      display: inline-block;
-      margin-right: 16px;
-      padding: 12px 20px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: #020617;
-      font-weight: 600;
+    /* SECTION DIVIDER */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent-soft), transparent);
+      margin: 12px 0 18px;
     }
 
-    /* Cards */
+    /* CARDS */
     .card {
       background: var(--card);
-      border-radius: 12px;
-      padding: 24px;
-      margin-top: 24px;
+      border-radius: 14px;
+      padding: 22px;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
 
     ul { margin-left: 18px; color: var(--muted); }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 20px;
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
     .social a {
       margin: 0 10px;
       font-size: 1.3rem;
+      color: var(--accent);
     }
   </style>
 </head>
 <body>
+  <!-- DATA BACKGROUND CANVAS -->
+  <canvas class="data-bg" id="dataCanvas"></canvas>
 
   <!-- HERO -->
   <section class="hero">
     <h1>Sneha Susan Shaju</h1>
-    <h3>Data Engineer | Python & Analytics Systems</h3>
-    <p>I build reliable data pipelines, backend modules, and analytical systems that turn raw data into decisions.</p>
-    <div class="hero-buttons">
-      <a href="#projects">View Projects</a>
-      <a href="Sneha_Susan_Shaju_Resume.pdf">Download Resume</a>
-    </div>
+    <div class="hero-role">Data Engineer · Python · Analytics Systems</div>
+    <div class="divider"></div>
+    <p>
+      I design data systems that behave well under real-world pressure — messy inputs,
+      incomplete timelines, schema constraints, and performance trade-offs.
+      My work sits at the intersection of backend engineering, analytics, and applied ML.
+    </p>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
+  <section id="about" style="margin-top:-40px;">
+    <h2>How I Think About Data</h2>
+    <div class="divider"></div>
     <p>
-      I am a Data Engineer with hands-on experience building Python-based data pipelines, backend workflows, and analytical systems.
-      Currently at Digital University Kerala, I work with PostgreSQL and Elasticsearch to automate ingestion pipelines and
-      enable analytics such as early-stage fraud detection and domain insights.
+      I don’t see data engineering as moving data from A to B. I see it as designing
+      systems that remain trustworthy when inputs are noisy, delayed, or incomplete.
+    </p>
+    <p>
+      In my current role at Digital University Kerala, I work on Python-based ingestion
+      pipelines backed by PostgreSQL and Elasticsearch, where correctness, reproducibility,
+      and automation matter more than flashy tooling.
+    </p>
+    <p>
+      I enjoy debugging edge cases, validating assumptions hidden inside data,
+      and building pipelines that analytics and ML teams can rely on without second-guessing.
     </p>
   </section>
 
@@ -198,5 +225,67 @@
     <p>© 2026 Sneha Susan Shaju</p>
   </footer>
 
+  <footer>
+    <p>© 2026 Sneha Susan Shaju</p>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('dataCanvas');
+    const ctx = canvas.getContext('2d');
+    let w, h, nodes;
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+
+    function init() {
+      nodes = Array.from({ length: 60 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = '#38bdf8';
+
+      nodes.forEach((n, i) => {
+        n.x += n.vx;
+        n.y += n.vy;
+
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, 1.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const m = nodes[j];
+          const dx = n.x - m.x;
+          const dy = n.y - m.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 120) {
+            ctx.strokeStyle = 'rgba(56,189,248,0.15)';
+            ctx.beginPath();
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(m.x, m.y);
+            ctx.stroke();
+          }
+        }
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    init();
+    draw();
+  </script>
 </body>
 </html>
