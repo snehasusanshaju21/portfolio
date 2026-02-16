@@ -1,46 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sneha Susan Shaju</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneha Susan Shaju | Data Engineer</title>
+  <meta name="description" content="Portfolio of Sneha Susan Shaju – Data Engineer specializing in Python, SQL, Data Pipelines, and Analytics" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #ffffff;
-      color: #333333;
-      text-align: center;
-      margin: 0;
-      padding: 50px;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+
+    a { color: var(--accent); text-decoration: none; }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 20px;
     }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 10px auto;
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 16px;
     }
+
+    h2 { font-size: 2rem; }
+
+    p { color: var(--muted); max-width: 800px; }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero h1 { font-size: 3rem; }
+
+    .hero h3 {
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero-buttons a {
+      display: inline-block;
+      margin-right: 16px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #020617;
+      font-weight: 600;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    ul { margin-left: 18px; color: var(--muted); }
+
     footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #777;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+
+    .social a {
+      margin: 0 10px;
+      font-size: 1.3rem;
     }
   </style>
 </head>
 <body>
-  <h1>Hi, I'm Sneha Susan Shaju 👋</h1>
-  <p>
-    I’m a Data Engineer at Digital University Kerala.  
-    I’m passionate about data analytics, automation, and building efficient data pipelines.
-  </p>
-  <p>
-    I love working with Python, SQL, PostgreSQL, and Power BI — turning raw data into meaningful insights.
-  </p>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Sneha Susan Shaju</h1>
+    <h3>Data Engineer | Python & Analytics Systems</h3>
+    <p>I build reliable data pipelines, backend modules, and analytical systems that turn raw data into decisions.</p>
+    <div class="hero-buttons">
+      <a href="#projects">View Projects</a>
+      <a href="Sneha_Susan_Shaju_Resume.pdf">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Data Engineer with hands-on experience building Python-based data pipelines, backend workflows, and analytical systems.
+      Currently at Digital University Kerala, I work with PostgreSQL and Elasticsearch to automate ingestion pipelines and
+      enable analytics such as early-stage fraud detection and domain insights.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <h3>Data Engineer — Digital University Kerala</h3>
+      <p>Oct 2023 – Present</p>
+      <ul>
+        <li>Developed Python modules for automated data ingestion into Elasticsearch</li>
+        <li>Designed database-driven workflow orchestration</li>
+        <li>Implemented data classification and calculation logic for fraud detection</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Data Analyst Intern — Digital University Kerala</h3>
+      <p>Feb 2023 – Jun 2023</p>
+      <ul>
+        <li>Analyzed agricultural and climate datasets</li>
+        <li>Delivered insights for data-driven decision making</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>AI-Powered Document QA System</h3>
+        <p><strong>Tech:</strong> Python, Mistral 7B, ChromaDB, LangChain, Streamlit</p>
+        <ul>
+          <li>Built a RAG-based system to query PDF/TXT documents</li>
+          <li>Implemented chunking, embeddings, and context retrieval</li>
+          <li>Designed an interactive Streamlit UI</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Revenue Analytics – Hospitality Domain</h3>
+        <p><strong>Tech:</strong> Power BI, SQL, DAX, ETL</p>
+        <ul>
+          <li>Designed ETL pipelines and data models</li>
+          <li>Built dashboards for revenue and occupancy insights</li>
+          <li>Implemented complex DAX calculations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <p><strong>Languages:</strong> Python, SQL</p>
+    <p><strong>Databases:</strong> PostgreSQL, Elasticsearch</p>
+    <p><strong>Data & ML:</strong> Pandas, NumPy, scikit-learn, TensorFlow, NLP, LLMs</p>
+    <p><strong>Tools:</strong> FastAPI, LangChain, ChromaDB, Streamlit, Git, Jira, Power BI</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="social">
+      <a href="mailto:snehasusanshaju@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/sneha-susan-shaju" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/snehasusanshaju" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
   <footer>
-    © 2025 Sneha Susan Shaju
+    <p>© 2026 Sneha Susan Shaju</p>
   </footer>
+
 </body>
 </html>
