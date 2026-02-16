@@ -42,7 +42,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* DATA NETWORK BACKGROUND */
     .data-bg {
       position: fixed;
       inset: 0;
@@ -53,7 +52,7 @@
     section {
       max-width: 1100px;
       margin: auto;
-      padding: 24px 24px; /* tighter vertical spacing */
+      padding: 24px 24px;
     }
 
     h1, h2, h3 { font-weight: 700; }
@@ -63,9 +62,9 @@
 
     p { color: var(--muted); max-width: 820px; }
 
-    /* HERO */
     .hero {
-      min-height: 65vh; /* reduced from 80vh */
+      padding-top: 120px;
+      padding-bottom: 60px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -78,20 +77,19 @@
       letter-spacing: 0.4px;
     }
 
-    /* SECTION DIVIDER */
     .divider {
       height: 1px;
       background: linear-gradient(to right, transparent, var(--accent-soft), transparent);
       margin: 12px 0 18px;
     }
 
-    /* CARDS */
     .card {
       background: var(--card);
       border-radius: 14px;
       padding: 22px;
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 20px;
     }
 
     .grid {
@@ -116,38 +114,38 @@
     }
   </style>
 </head>
+
 <body>
-  <!-- DATA BACKGROUND CANVAS -->
   <canvas class="data-bg" id="dataCanvas"></canvas>
 
   <!-- HERO -->
   <section class="hero">
     <h1>Sneha Susan Shaju</h1>
-    <div class="hero-role">Data Engineer · Python · Analytics Systems</div>
+    <div class="hero-role">
+      Data Engineer · Python · PostgreSQL · Elasticsearch · Machine Learning · NLP
+    </div>
     <div class="divider"></div>
     <p>
-      I design data systems that behave well under real-world pressure — messy inputs,
-      incomplete timelines, schema constraints, and performance trade-offs.
-      My work sits at the intersection of backend engineering, analytics, and applied ML.
+      Data Engineer focused on building reliable data pipelines, analytics workflows,
+      and ML-ready systems using Python and SQL.
     </p>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" style="margin-top:-40px;">
-    <h2>How I Think About Data</h2>
+  <section id="about">
+    <h2>A bit about me</h2>
     <div class="divider"></div>
+
     <p>
-      I don’t see data engineering as moving data from A to B. I see it as designing
-      systems that remain trustworthy when inputs are noisy, delayed, or incomplete.
+      I am a Data Engineer with hands-on experience building Python-based data pipelines and analytical workflows for real-world systems.
     </p>
+
     <p>
-      In my current role at Digital University Kerala, I work on Python-based ingestion
-      pipelines backed by PostgreSQL and Elasticsearch, where correctness, reproducibility,
-      and automation matter more than flashy tooling.
+      In my current role, I work on automated data ingestion and processing pipelines using PostgreSQL and Elasticsearch, focusing on data reliability, validation, and downstream usability.
     </p>
+
     <p>
-      I enjoy debugging edge cases, validating assumptions hidden inside data,
-      and building pipelines that analytics and ML teams can rely on without second-guessing.
+      I’m particularly interested in working with imperfect data — missing values, delayed inputs, and evolving schemas — and designing pipelines that remain stable as requirements grow.
     </p>
   </section>
 
@@ -159,9 +157,8 @@
       <h3>Data Engineer — Digital University Kerala</h3>
       <p>Oct 2023 – Present</p>
       <ul>
-        <li>Developed Python modules for automated data ingestion into Elasticsearch</li>
-        <li>Designed database-driven workflow orchestration</li>
-        <li>Implemented data classification and calculation logic for fraud detection</li>
+        <li>Developed Python modules for periodic data ingestion into Elasticsearch</li>
+        <li>Implemented calculations and classifications enabling early-stage fraud detection</li>
       </ul>
     </div>
 
@@ -184,9 +181,9 @@
         <h3>AI-Powered Document QA System</h3>
         <p><strong>Tech:</strong> Python, Mistral 7B, ChromaDB, LangChain, Streamlit</p>
         <ul>
-          <li>Built a RAG-based system to query PDF/TXT documents</li>
-          <li>Implemented chunking, embeddings, and context retrieval</li>
-          <li>Designed an interactive Streamlit UI</li>
+          <li>Built a document-based QA chatbot using LLMs and vector search</li>
+          <li>Implemented parsing, chunking, embeddings, and retrieval pipelines</li>
+          <li>Designed an interactive Streamlit interface</li>
         </ul>
       </div>
 
@@ -194,7 +191,7 @@
         <h3>Revenue Analytics – Hospitality Domain</h3>
         <p><strong>Tech:</strong> Power BI, SQL, DAX, ETL</p>
         <ul>
-          <li>Designed ETL pipelines and data models</li>
+          <li>Designed ETL pipelines and analytical data models</li>
           <li>Built dashboards for revenue and occupancy insights</li>
           <li>Implemented complex DAX calculations</li>
         </ul>
@@ -215,15 +212,10 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="social">
-      <a href="mailto:snehasusanshaju@gmail.com"><i class="fas fa-envelope"></i></a>
       <a href="https://github.com/sneha-susan-shaju" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com/in/snehasusanshaju" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
   </section>
-
-  <footer>
-    <p>© 2026 Sneha Susan Shaju</p>
-  </footer>
 
   <footer>
     <p>© 2026 Sneha Susan Shaju</p>
